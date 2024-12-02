@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kapcsolatfelvétel és elérhetőségek a Whisky Házhoz.">
+    <title>Kapcsolat - Whisky Ház</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('oldal.jpg');        
+        }
+        header {
+            background-color: #3e2723;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .contact-info {
+            color: #fff;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .contact-info h2 {
+            color: #ffffff;
+        }
+        .contact-info p {
+            font-size: 1.1rem;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        form button {
+            background-color: #3e2723;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #5a3e35;
+        }
+        footer {
+            background-color: #3e2723;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kapcsolatfelvétel</h1>
+    </header>
+   
+    <div class="container">
+        <div class="contact-info">
+            <h2>Elérhetőségek</h2>
+            <p><strong>Cím:</strong> 1234 Budapest, Fő utca 12.</p>
+            <p><strong>Telefon:</strong> +36 1 234 5678</p>
+            <p><strong>Email:</strong> info@whiskyhaz.hu</p>
+        </div>
+
+        <form>
+            <h2>Kapcsolatfelvételi űrlap</h2>
+            <label for="name">Név:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Üzenet:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Küldés</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Whisky Ház</p>
+    </footer>
+
+</body>
+</html>

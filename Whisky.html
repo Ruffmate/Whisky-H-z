@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prémium házi whisky árusítása közvetlenül a gyártótól. Fedezd fel a különleges kézműves italokat!">
+    <title>Whisky Ház - Prémium házi whisky árusítása</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('oldal.jpg');
+        }
+        header {
+            background-image: url('oldal.jpg');
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fffdfd;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffffff;
+        }
+        .hero {
+            background-image: url('háttér.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .container {
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            text-align: left;
+            width: 250px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: rgb(233, 129, 10);
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #3e2723;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        #loginModal{
+            color: black;
+        }
+        #registerModal{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Whisky Ház</h1>
+        <p>Egy házias whisky</p>
+    </header>
+
+    <nav>
+        <a href="Rólunk.html">Rólunk</a>
+        <a href="Kapcsolat.html"  target="_blank">Kapcsolat</a>
+        <a href="#" id="loginBtn">Bejelentkezés</a>
+        <a href="#" id="registerBtn">Regisztráció</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Üdvözöljük a Whisky Házban</h1>
+        <p>Kézműves whisky, mely az igazi ínyenceknek készült</p>
+    </section>
+
+<div class="container">
+    <input type="text" id="searchInput" placeholder="Keresés a termékek között..." onkeyup="searchProducts()" style="padding: 10px; width: 80%; margin-bottom: 20px;">
+    <div id="productContainer">
+    <div class="product">
+        <img src=whisky1.png alt="Whisky 1">
+        <h3>Gustav</h3>
+        <p>Ízletes, gazdag aromájú whisky, 45% alkoholtartalommal.</p>
+        <p>Ár: 4 500 Ft</p>
+        <button onclick="addToCart('Gustav', 4500)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 2.jpeg" alt="Whisky 2">
+        <h3>Smoky Oak</h3>
+        <p>Különleges füstös ízvilág, 50% alkoholtartalommal.</p>
+        <p>Ár: 6 000 Ft</p>
+        <button onclick="addToCart('Smoky Oak', 6000)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 3.jpeg" alt="Whisky 3">
+        <h3>Highland Dream</h3>
+        <p>Gazdag, fűszeres ízvilág, 43% alkoholtartalommal.</p>
+        <p>Ár: 9 300 Ft</p>
+        <button onclick="addToCart('Highland Dream', 9300)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 4.jpeg" alt="Whisky 4">
+        <h3>Maple Flame</h3>
+        <p>Édeskés juharfa íz, 47% alkoholtartalommal.</p>
+        <p>Ár: 9 800 Ft</p>
+        <button onclick="addToCart('Maple Flame', 9800)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 5.jpeg" alt="Whisky 5">
+        <h3>Golden Stag</h3>
+        <p>Elegáns, mély ízvilág, 50% alkoholtartalommal.</p>
+        <p>Ár: 10 000 Ft</p>
+        <button onclick="addToCart('Golden Stag', 10000)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 6.jpeg" alt="Whisky 6">
+        <h3>Celtic Mist</h3>
+        <p>Könnyed és lágy, 40% alkoholtartalommal.</p>
+        <p>Ár: 8 200 Ft</p>
+        <button onclick="addToCart('Celtic Mist', 8200)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 7.jpeg" alt="Whisky 7">
+        <h3>Midnight Smoke</h3>
+        <p>Intenzív füstös aroma, 48% alkoholtartalommal.</p>
+        <p>Ár: 9 500 Ft</p>
+        <button onclick="addToCart('Midnight Smoke', 9500)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 8.jpeg" alt="Whisky 8">
+        <h3>Irish Luck</h3>
+        <p>Klasszikus ír whisky, 42% alkoholtartalommal.</p>
+        <p>Ár: 9 000 Ft</p>
+        <button onclick="addToCart('Irish Luck', 9000)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 9.jpeg" alt="Whisky 9">
+        <h3>Honey Barrel</h3>
+        <p>Finom mézes aroma, 44% alkoholtartalommal.</p>
+        <p>Ár: 9 700 Ft</p>
+        <button onclick="addToCart('Honey Barrel', 9700)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 10.jpeg" alt="Whisky 10">
+        <h3>Riverstone</h3>
+        <p>Friss, könnyed ízvilág, 41% alkoholtartalommal.</p>
+        <p>Ár: 8 800 Ft</p>
+        <button onclick="addToCart('Riverstone', 8800)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 11.jpeg" alt="Whisky 11">
+        <h3>Blazing Oak</h3>
+        <p>Tüzes, erős íz, 50% alkoholtartalommal.</p>
+        <p>Ár: 10 000 Ft</p>
+        <button onclick="addToCart('Blazing Oak', 10000)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 12.jpeg" alt="Whisky 12">
+        <h3>Amber Falls</h3>
+        <p>Könnyű, gyümölcsös aroma, 38% alkoholtartalommal.</p>
+        <p>Ár: 7 500 Ft</p>
+        <button onclick="addToCart('Amber Falls', 7500)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 13.jpeg" alt="Whisky 13">
+        <h3>Thistle Gold</h3>
+        <p>Elegáns és selymes, 46% alkoholtartalommal.</p>
+        <p>Ár: 9 700 Ft</p>
+        <button onclick="addToCart('Thistle Gold', 9700)">Kosárba</button>
+    </div>
+    <div class="product">
+        <img src="Whisky 14.jpeg" alt="Whisky 14">
+        <h3>Frosty Peak</h3>
+        <p>Frissítő, hideg ízvilág, 40% alkoholtartalommal.</p>
+        <p>Ár: 8 600 Ft</p>
+        <button onclick="addToCart('Frosty Peak', 8600)">Kosárba</button>
+    </div>
+</div>
+<div class="cart" onclick="showCart()" style="position: fixed; top: 10px; right: 20px; background-color: rgb(233, 129, 10); padding: 10px; border-radius: 5px; color: white; cursor: pointer;">
+    🛒 Kosár (<span id="cartCount">0</span> termék)
+</div>
+<button onclick="placeOrder()" style="position: fixed; top: 60px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
+    Rendelés
+</button>
+
+    <footer>
+        <p>© 2024 Whisky Ház</p>
+    </footer>
+
+    <!-- Felugró bejelentkezési ablak -->
+    <div id="loginModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:1px solid black; z-index:100;">
+        <h2>Bejelentkezés</h2>
+        <label for="loginUsername">Felhasználónév:</label>
+        <input type="text" id="loginUsername" name="username"><br><br>
+        <label for="loginPassword">Jelszó:</label>
+        <input type="password" id="loginPassword" name="password"><br><br>
+        <button onclick="login()">Bejelentkezés</button>
+        <button onclick="closeModal('loginModal')">Bezárás</button>
+    </div>
+
+    <!-- Felugró regisztrációs ablak -->
+    <div id="registerModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:1px solid black; z-index:100;">
+        <h2>Regisztráció</h2>
+        <label for="registerUsername">Felhasználónév:</label>
+        <input type="text" id="registerUsername"><br><br>
+        <label for="registerPassword">Jelszó:</label>
+        <input type="password" id="registerPassword"><br><br>
+        <button onclick="register()">Regisztráció</button>
+        <button onclick="closeModal('registerModal')">Bezárás</button>
+    </div>
+
+    <!-- Bankkártya és szállítási cím kérés -->
+    <div id="orderModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:rgb(170, 170, 170);color: black; padding:20px; border:1px solid black; z-index:100;">
+        <h2>Rendelés</h2>
+        <form id="orderForm">
+            <label for="shippingAddress">Szállítási cím:</label><br>
+            <input type="text" id="shippingAddress" required><br><br>
+            <label for="cardNumber">Bankkártya szám:</label><br>
+            <input type="text" id="cardNumber" required><br><br>
+            <label for="expiryDate">Lejárat (hó/év):</label><br>
+            <input type="text" id="expiryDate" required><br><br>
+            <label for="cvv">CVC:</label><br>
+            <input type="text" id="cvv" required><br><br>
+            <button type="button" onclick="placeOrderWithDetails()">Rendelés leadása</button>
+            <button type="button" onclick="closeModal('orderModal')">Bezárás</button>
+        </form>
+    </div>
+
+    <script>
+        let cart = [];
+        let users = [];
+
+        function addToCart(product, price) {
+            cart.push({product, price});
+            document.getElementById('cartCount').innerText = cart.length;
+        }
+
+        function searchProducts() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase(); // A keresett szöveg
+        const products = document.querySelectorAll('#productContainer .product'); // A termékek konténere
+
+        // Ha nincs semmi a keresőmezőben, mindent jelenítünk meg
+        if (searchInput === "") {
+            products.forEach(product => {
+                product.style.display = 'inline-block'; // Minden termék megjelenik
+            });
+            return;
+        }
+
+        // Szűrjük a termékeket
+        products.forEach(product => {
+            const productName = product.querySelector('h3').innerText.toLowerCase(); // Termék neve
+            const productDescription = product.querySelector('p').innerText.toLowerCase(); // Termék leírása
+
+            // Ha a keresési szöveg benne van a névben vagy a leírásban
+            if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
+                product.style.display = 'inline-block'; // Ha megegyezik, megjelenítjük
+            } else {
+                product.style.display = 'none'; // Ha nem egyezik, elrejtjük
+            }
+        });
+    }
+        function showCart() {
+            if (cart.length === 0) {
+                alert("A kosár üres. Kérjük, adjon hozzá termékeket!");
+                return;
+            }
+
+            let cartContent = "A kosár tartalma:\n";
+            let totalPrice = 0;
+            cart.forEach(item => {
+                cartContent += item.product + " - " + item.price + " Ft\n";
+                totalPrice += item.price;
+            });
+            cartContent += "\nÖsszesen: " + totalPrice + " Ft";
+            alert(cartContent);
+        }
+        function placeOrder() {
+            if (cart.length === 0) {
+                alert("A kosár üres. Kérjük, adjon hozzá termékeket a rendeléshez.");
+                return;
+            }
+            document.getElementById('orderModal').style.display = 'block';
+        }
+        
+        function placeOrderWithDetails() {
+            const shippingAddress = document.getElementById('shippingAddress').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+
+            if (!shippingAddress || !cardNumber || !expiryDate || !cvv) {
+                alert("Kérjük, töltse ki az összes mezőt!");
+                return;
+            }
+
+            let orderContent = "Rendelés tartalma:\n";
+            let totalPrice = 0;
+            cart.forEach(item => {
+                orderContent += item.product + " - " + item.price + " Ft\n";
+                totalPrice += item.price;
+            });
+            orderContent += "\nSzállítási cím: " + shippingAddress + "\n";
+            orderContent += "Bankkártya: " + cardNumber + "\n";
+            orderContent += "Összesen: " + totalPrice + " Ft";
+            alert(orderContent);
+
+            cart = [];
+            document.getElementById('cartCount').innerText = cart.length;
+            closeModal('orderModal');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function register() {
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            if (username && password) {
+                users.push({username, password});
+                alert("Sikeres regisztráció! Most már bejelentkezhet.");
+                closeModal('registerModal');
+            } else {
+                alert("Kérjük, töltse ki az összes mezőt!");
+            }
+        }
+
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            const user = users.find(user => user.username === username && user.password === password);
+            if (user) {
+                alert("Sikeres bejelentkezés!");
+                closeModal('loginModal');
+            } else {
+                alert("Hibás felhasználónév vagy jelszó!");
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        document.getElementById('loginBtn').onclick = function() {
+            document.getElementById('loginModal').style.display = 'block';
+        };
+
+        document.getElementById('registerBtn').onclick = function() {
+            document.getElementById('registerModal').style.display = 'block';
+        };
+    </script>
+
+</body>
+</html>
+
+
+
